@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery-1.12.3.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+    </script>
+
+
+    <script>
+        Array.prototype.unique3 = function() {
+                var res = []; //创建一个新的数组存放结果 2.创建一个空对象
+                var a = {}; //创建一个空对象
+                for (var i = 0; i < this.length; i++) {
+                    if (!a[this[i]]) {
+                        res.push(this[i]);
+                        a[this[i]] = 1;
+                    }
+                }
+                return res;
+
+            }
+            //for循环时，每次取出一个元素与对象进行对比，如果这个元素不重复，则把它存放到结果数组中，同时把这个元素的内容作为对象的一个属性，并赋值为1，存入到第2步建立的对象中。 
+            //说明：至于如何对比，就是每次从原数组中取出一个元素，然后到对象中去访问这个属性，如果能访
+        var arr = [112, 112, 34, '你好', 112, 112, 34, '你好', 'str', 'str1'];
+        alert(arr.unique3());
+    </script>
+</body>
+<script>
+</script>
+
+</html>

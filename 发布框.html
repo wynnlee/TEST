@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery-1.12.3.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <textarea rows="10" cols="10" class="form-control" id="text"></textarea>
+        </form>
+        <span class="text-muted">你还可以输入<strong style="color:red;">140</strong>个字</span>
+
+    </div>
+
+    <script>
+        var maxLength = 140;
+        $('#text').keyup(function() {
+            var l = $(this).val().length;
+            $('strong').text(maxLength - l);
+            if (parseInt($('strong').text()) < 0) {
+                $('strong').text('0');
+                var val = $(this).val().substring(0, 140);
+                $(this).val(val);
+            }
+
+        })
+    </script>
+</body>
+<script>
+</script>
+
+</html>
